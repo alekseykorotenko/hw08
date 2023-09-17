@@ -16,16 +16,15 @@ body {
 }
 
 body {
-  background-color: rgb(96, 101, 131);
-  overflow: hidden;
+  background-image: url(../imgs/bg_image.webp);
+  background-size: cover;
 }
 
-.wrapper {
+.wrapper__weather {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgb(96, 101, 131);
 }
 
 .wrapper__sunbody {
@@ -58,7 +57,7 @@ body {
   left: 17%;
 }
 
-.wrapper__sun:hover {
+.wrapper__sunbody:hover {
   transform: rotate(360deg);
 }
 
@@ -107,10 +106,18 @@ body {
   z-index: 999;
 }
 
-.kapli {
+.drop {
   position: relative;
   top: 20px;
   width: 300px;
+}
+
+.wrapper__bush {
+  position: absolute;
+  bottom: -50%;
+  left: 40%;
+  animation: bushGrowth 10s infinite;
+  animation-play-state: paused;
 }
 
 @keyframes cloudAnimation {
@@ -133,5 +140,19 @@ body {
   80% {
     margin-top: 35%;
     margin-left: 45%;
+  }
+}
+@keyframes bushGrowth {
+  0% {
+    bottom: -50%;
+    left: 40%;
+  }
+  33% {
+    bottom: -25%;
+    left: 40%;
+  }
+  66% {
+    bottom: -13%;
+    left: 40%;
   }
 }/*# sourceMappingURL=style.css.map */
