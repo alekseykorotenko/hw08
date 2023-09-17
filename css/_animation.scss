@@ -124,7 +124,22 @@ body {
     bottom: 18%;
     left: 60%;
     animation: flowerGrowth 10s forwards;
+    animation-fill-mode: both;
+    animation-play-state: paused;
 }
+
+.bee {
+    width: 100px;
+}
+
+.wrapper__bee {
+    position: absolute;
+    animation: beeFlying 10s linear forwards;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    animation-delay: 8s;
+   
+} 
 
 @keyframes cloudAnimation {
     0% {
@@ -218,6 +233,32 @@ body {
     90% {
         bottom: 18%;
     }
+}
 
+@keyframes beeFlying {
+    0% {
+        left: -10%;
+        top: 50%;
+    }
 
+    25% {
+        left: 0%;
+        top: 30%;
+    }
+
+    50% {
+        left: 20%;
+        top: 50%;
+        transform: rotate(360deg);
+    }
+
+    75% {
+        left: 40%;
+        top: 30%;
+    }
+
+    100% {
+        left: 60%;
+        top: 60%;
+    }
 }
