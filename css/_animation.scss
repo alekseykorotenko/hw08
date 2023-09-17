@@ -9,7 +9,8 @@ body {
 }
 
 .wrapper__sunbody {
-    position: relative;
+    @include flex(row, center, center);
+    
     transition: all 2s;
 }
 
@@ -40,60 +41,79 @@ body {
 }
 
 .wrapper__cloudbody {
-    animation: cloudAnimation 5s infinite;
-
+    display: none;
+    position: absolute;
 }
 
 .wrapper__cloud {
-    position: absolute;
-    display: none;
-    // width: 50px;
+    animation: cloudAnimation 10s infinite;
+    position: relative;
+    background: #fff;
+    width: 300px;
+    height: 100px;
+    border-radius: 150px;
+    box-shadow: 10px 10px rgba(0,0,0,0.1);
 }
 
-// .wrapper__cloud:active {
-// }
-
-.cloud {
+.wrapper__cloud::after {
+    content: '';
+    background: #fff;
     position: absolute;
-    width: 250px;
-    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+}
+
+.wrapper__cloud::before {
+    content: '';
+    background: #fff;
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
 }
 
 .cryingeyes {
+    position: absolute;
+    width: 150px;
+    left: 25%;
+    top: -50%;
+    z-index: 999;
+}
+
+.kapli {
     position: relative;
-    width: 100px;
-    padding-top: 30px;
-    left: 70%;
+    top: 20px;
+    width: 300px;
 }
 
 @keyframes cloudAnimation {
     0% {
-        left:50%;
-        top: 0%;
+        margin-top:0%;
+        margin-left: 0%;
     }
     
     20% {
-        left:75%;
-        top: 25%;
+        margin-top:25%;
+        margin-left: 25%;
     }
     
     40% {
-        left:100%;
-        top: 40%;
+        margin-top:25%;
+        margin-left: 22%;
     }
 
     60% {
-        left:75%;
-        top: 35%;
+        margin-top:25%;
+        margin-left: 50%;
     }
 
     80% {
-        left:35%;
-        top: 25%;
-    }
-
-    99% {
-        left:0%;
-        top: 25%;
+        margin-top:35%;
+        margin-left: 45%;
     }
 }

@@ -9,7 +9,7 @@
   <body>
     <div class="wrapper">
       <div class="wrapper__sunbody">
-        <div class="wrapper__sunbody wrapper__sun">
+        <div class="wrapper__sun">
           <img
             class="sunglasess"
             src="./imgs/sunglasses.png"
@@ -19,27 +19,30 @@
         </div>
       </div>
       <div class="wrapper__cloudbody">
-        <div class="wrapper__cloudbody wrapper__cloud">
-          <img class="cloud" src="./imgs/cloud.png" alt="cloud" />
+        <div class="wrapper__cloud">
+          <!-- <img class="cloud" src="./imgs/cloud.png" alt="cloud" /> -->
           <img
             class="cryingeyes"
             src="./imgs/cryingeyes.png"
             alt="cryingeyes"
           />
+          <img class="kapli" src="./imgs/kapli.png" alt="kapli" />
+          <img class="kapli" src="./imgs/kapli.png" alt="kapli" />
+          <img class="kapli" src="./imgs/kapli.png" alt="kapli" />
         </div>
       </div>
     </div>
   </body>
 
   <script>
-    let sun = document.getElementsByClassName('wrapper__sun')[0];
-    let cloud = document.getElementsByClassName('wrapper__cloud')[0];
-    function changeWeather() {
-      let sun = document.getElementsByClassName('wrapper__sun')[0];
-      sun.styles.display = none;
-    }
+    let sun = document.getElementsByClassName('wrapper__sunbody')[0];
+    // function changeWeather() {
+    //   let sun = document.getElementsByClassName('wrapper__sun')[0];
+    //   sun.styles.display = none;
+    // }
 
     sun.addEventListener('click', function () {
+      let cloud = document.getElementsByClassName('wrapper__cloudbody')[0];
       sun.style.display = 'none';
       cloud.style.display = 'contents';
     });
