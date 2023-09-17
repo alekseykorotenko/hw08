@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__sunbody">
+        <div class="wrapper__sunbody wrapper__sun">
+          <img
+            class="sunglasess"
+            src="./imgs/sunglasses.png"
+            alt="sunglasess"
+          />
+          <img class="smile" src="./imgs/smile.png" alt="smile" />
+        </div>
+      </div>
+      <div class="wrapper__cloudbody">
+        <div class="wrapper__cloudbody wrapper__cloud">
+          <img class="cloud" src="./imgs/cloud.png" alt="cloud" />
+          <img
+            class="cryingeyes"
+            src="./imgs/cryingeyes.png"
+            alt="cryingeyes"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let sun = document.getElementsByClassName('wrapper__sun')[0];
+    let cloud = document.getElementsByClassName('wrapper__cloud')[0];
+    function changeWeather() {
+      let sun = document.getElementsByClassName('wrapper__sun')[0];
+      sun.styles.display = none;
+    }
+
+    sun.addEventListener('click', function () {
+      sun.style.display = 'none';
+      cloud.style.display = 'contents';
+    });
+  </script>
+</html>
