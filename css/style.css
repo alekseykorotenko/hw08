@@ -18,6 +18,7 @@ body {
 body {
   background-image: url(../imgs/bg_image.webp);
   background-size: cover;
+  overflow: hidden;
 }
 
 .wrapper__weather {
@@ -26,16 +27,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.wrapper__sunbody {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.wrapper__weather .wrapper__sunbody {
   transition: all 2s;
 }
-
-.wrapper__sun {
+.wrapper__weather .wrapper__sunbody .wrapper__sun {
   position: relative;
   width: 150px;
   height: 150px;
@@ -43,31 +38,26 @@ body {
   background-color: orange;
   box-shadow: 0 0 35px 5px yellow, 0 0 25px 10px yellow inset;
 }
-
-.sunglasess {
+.wrapper__weather .wrapper__sunbody .wrapper__sun .sunglasess {
   position: absolute;
   width: 150px;
   top: 10%;
 }
-
-.smile {
+.wrapper__weather .wrapper__sunbody .wrapper__sun .smile {
   position: absolute;
   width: 100px;
   top: 50%;
   left: 17%;
 }
-
-.wrapper__sunbody:hover {
+.wrapper__weather .wrapper__sunbody:hover {
   transform: rotate(360deg);
 }
-
-.wrapper__cloudbody {
+.wrapper__weather .wrapper__cloudbody {
   display: none;
   position: absolute;
 }
-
-.wrapper__cloud {
-  animation: cloudAnimation 10s infinite;
+.wrapper__weather .wrapper__cloudbody .wrapper__cloud {
+  animation: cloudAnimation 10s linear;
   position: relative;
   background: #fff;
   width: 300px;
@@ -75,8 +65,14 @@ body {
   border-radius: 150px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
 }
-
-.wrapper__cloud::after {
+.wrapper__weather .wrapper__cloudbody .wrapper__cloud .cryingeyes {
+  position: absolute;
+  width: 150px;
+  left: 25%;
+  top: -50%;
+  z-index: 999;
+}
+.wrapper__weather .wrapper__cloudbody .wrapper__cloud::after {
   content: "";
   background: #fff;
   position: absolute;
@@ -86,8 +82,7 @@ body {
   top: -50px;
   left: 50px;
 }
-
-.wrapper__cloud::before {
+.wrapper__weather .wrapper__cloudbody .wrapper__cloud::before {
   content: "";
   background: #fff;
   position: absolute;
@@ -97,27 +92,49 @@ body {
   top: -90px;
   right: 40px;
 }
-
-.cryingeyes {
-  position: absolute;
-  width: 150px;
-  left: 25%;
-  top: -50%;
-  z-index: 999;
+.wrapper__weather .wrapper__cloudbody .wrapper__cloud:active {
+  transform: skew(15deg, 30deg);
 }
-
-.drop {
+.wrapper__weather .wrapper__cloudbody:hover {
+  transform: translate(42px, 18px);
+}
+.wrapper__weather .drop {
   position: relative;
   top: 20px;
   width: 300px;
+}
+.wrapper__weather .drop:hover {
+  transform: translate(10px, 5px);
+}
+
+.birds {
+  width: 200px;
+}
+.birds:hover {
+  transform: scale(1.3, 1.3);
 }
 
 .wrapper__bush {
   position: absolute;
   bottom: -50%;
   left: 40%;
-  animation: bushGrowth 10s infinite;
+  animation: bushGrowth 10s forwards;
+  animation-fill-mode: both;
   animation-play-state: paused;
+}
+
+.flower {
+  width: 100px;
+}
+.flower:hover {
+  transform: scale(1.4);
+}
+
+.wrapper__flower {
+  position: absolute;
+  bottom: 18%;
+  left: 60%;
+  animation: flowerGrowth 10s forwards;
 }
 
 @keyframes cloudAnimation {
@@ -141,6 +158,10 @@ body {
     margin-top: 35%;
     margin-left: 45%;
   }
+  100% {
+    margin-top: 0%;
+    margin-left: 0%;
+  }
 }
 @keyframes bushGrowth {
   0% {
@@ -154,5 +175,41 @@ body {
   66% {
     bottom: -13%;
     left: 40%;
+  }
+  100% {
+    bottom: -13%;
+    left: 40%;
+  }
+}
+@keyframes flowerGrowth {
+  0% {
+    bottom: -70%;
+  }
+  10% {
+    bottom: -60%;
+  }
+  20% {
+    bottom: -50%;
+  }
+  30% {
+    bottom: -40%;
+  }
+  40% {
+    bottom: -30%;
+  }
+  50% {
+    bottom: -20%;
+  }
+  60% {
+    bottom: -10%;
+  }
+  70% {
+    bottom: 0%;
+  }
+  80% {
+    bottom: 10%;
+  }
+  90% {
+    bottom: 18%;
   }
 }/*# sourceMappingURL=style.css.map */

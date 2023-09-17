@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animation</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -21,7 +25,6 @@
         </div>
         <div class="wrapper__cloudbody">
           <div class="wrapper__cloud">
-            <!-- <img class="cloud" src="./imgs/cloud.png" alt="cloud" /> -->
             <img
               class="cryingeyes"
               src="./imgs/cryingeyes.png"
@@ -33,6 +36,12 @@
           </div>
         </div>
       </div>
+      <div class="wrapper__birds">
+        <img class="birds" src="./imgs/birds.png" alt="birds" />
+      </div>
+      <div class="wrapper__flower">
+        <img class="flower" src="./imgs/flower.png" alt="flower" />
+      </div>
       <div class="wrapper__bush">
         <img class="bush" src="./imgs/bush.png" alt="bush" />
       </div>
@@ -41,18 +50,20 @@
 
   <script>
     let sun = document.getElementsByClassName('wrapper__sunbody')[0];
-    // function changeWeather() {
-    //   let sun = document.getElementsByClassName('wrapper__sun')[0];
-    //   sun.styles.display = none;
-    // }
+    let birds = document.getElementsByClassName('wrapper__birds')[0];
+    let brush = document.getElementsByClassName('wrapper__bush')[0];
+    let cloud = document.getElementsByClassName('wrapper__cloudbody')[0];
 
     sun.addEventListener('click', function () {
-      let cloud = document.getElementsByClassName('wrapper__cloudbody')[0];
-      let brush = document.getElementsByClassName('wrapper__bush')[0];
-
+      birds.style.display = 'none';
       sun.style.display = 'none';
       cloud.style.display = 'contents';
       brush.style.animationPlayState = 'running';
+    });
+
+    cloud.addEventListener('animationend', function () {
+      cloud.style.display = 'none';
+      sun.style.display = 'contents';
     });
   </script>
 </html>
