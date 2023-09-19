@@ -1,0 +1,27 @@
+// COLORS
+
+$main-color: #fff;
+$addition-color: #cfef84;
+$secondary-color: #efd184;
+
+// RESET
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+// GLOBAL STYLES
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
