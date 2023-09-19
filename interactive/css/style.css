@@ -62,29 +62,30 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 .group__item {
   padding: 0 7%;
 }
 
-.footer {
-  opacity: 0.8;
+.youtube {
+  width: 350px;
+  height: 250px;
 }
 
-.wrapper__playlist {
+.footer {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.footer .wrapper__playlist {
   padding-top: 30px;
   text-align: center;
 }
-
-.audio__name {
+.footer .audio__name {
   font-size: 24px;
   color: #6fecc2;
   padding: 20px 0;
 }
-
-.wrapper__audio {
+.footer .wrapper__audio {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;

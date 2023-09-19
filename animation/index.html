@@ -49,33 +49,32 @@
         <img class="bee" src="./imgs/bee.png" alt="bee" />
       </div>
     </div>
+    <script>
+      let sun = document.getElementsByClassName('wrapper__sunbody')[0];
+      let birds = document.getElementsByClassName('wrapper__birds')[0];
+      let brush = document.getElementsByClassName('wrapper__bush')[0];
+      let cloud = document.getElementsByClassName('wrapper__cloudbody')[0];
+      let flower = document.getElementsByClassName('wrapper__flower')[0];
+      let bee = document.getElementsByClassName('wrapper__bee')[0];
+
+      sun.addEventListener('click', function () {
+        birds.style.display = 'none';
+        sun.style.display = 'none';
+        cloud.style.display = 'contents';
+        flower.style.animationPlayState = 'running';
+        bee.style.animationPlayState = 'running';
+        brush.style.animationPlayState = 'running';
+      });
+
+      cloud.addEventListener('animationend', function () {
+        cloud.style.display = 'none';
+        sun.style.display = 'contents';
+      });
+
+      bee.addEventListener('animationend', function () {
+        bee.style.transform = 'scale(1.5)';
+        document.location.reload();
+      });
+    </script>
   </body>
-
-  <script>
-    let sun = document.getElementsByClassName('wrapper__sunbody')[0];
-    let birds = document.getElementsByClassName('wrapper__birds')[0];
-    let brush = document.getElementsByClassName('wrapper__bush')[0];
-    let cloud = document.getElementsByClassName('wrapper__cloudbody')[0];
-    let flower = document.getElementsByClassName('wrapper__flower')[0];
-    let bee = document.getElementsByClassName('wrapper__bee')[0];
-
-    sun.addEventListener('click', function () {
-      birds.style.display = 'none';
-      sun.style.display = 'none';
-      cloud.style.display = 'contents';
-      flower.style.animationPlayState = 'running';
-      bee.style.animationPlayState = 'running';
-      brush.style.animationPlayState = 'running';
-    });
-
-    cloud.addEventListener('animationend', function () {
-      cloud.style.display = 'none';
-      sun.style.display = 'contents';
-    });
-
-    bee.addEventListener('animationend', function () {
-      bee.style.transform = 'scale(1.5)';
-      document.location.reload();
-    });
-  </script>
 </html>
