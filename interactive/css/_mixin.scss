@@ -6,3 +6,9 @@
   justify-content: $jc;
   align-items: $ai;
 }
+
+@mixin grid($col, $row) {
+  display: grid;
+  grid-template-columns: $col;
+  grid-template-rows: $row;
+}

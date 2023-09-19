@@ -1,8 +1,10 @@
 // COLORS
-
-$main-color: #fff;
+$main-color: #6fecc2;
 $addition-color: #cfef84;
 $secondary-color: #efd184;
+
+//IMPORTS
+@import 'mixin';
 
 // RESET
 
@@ -18,10 +20,10 @@ $secondary-color: #efd184;
   box-sizing: border-box;
 }
 
-// GLOBAL STYLES
-
+// GLOBAL
+body {
+  background-image: url(../imgs/bg_image.png);
+}
 .wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex(column, center, center);
 }

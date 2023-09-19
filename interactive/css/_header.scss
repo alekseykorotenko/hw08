@@ -1,9 +1,11 @@
 .header {
   display: block;
-  //   justify-content: center;
-  //   align-items: center;
 }
 
-.wrapper__heading {
-  display: block;
+.groups__heading,
+.wrapper__heading,
+.footer__heading {
+  font-size: 3.25rem;
+  color: $addition-color;
+  padding: 30px;
 }

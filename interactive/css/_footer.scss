@@ -1,0 +1,22 @@
+// IMPORTS
+@import 'mixin';
+
+// FOOTER
+.footer {
+  //   background-color: $secondary-color;
+  opacity: 0.8;
+}
+.wrapper__playlist {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.audio__name {
+  font-size: 24px;
+  color: $main-color;
+  padding: 20px 0;
+}
+
+.wrapper__audio {
+  @include grid(1fr 1fr 1fr, 1fr 1fr 1fr);
+}
